@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | fahai的博客</title>
+  <title>CS31n学习笔记&lt;三&gt;损失函数与最优化 | fahai的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重庆邮电大学19届研究僧一枚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fahai的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="1、前言　　损失函数（Loss function）或者代价函数（Cost function）是用来估量你模型的预测值 $f(x)$ 与真实值 Y 的不一致程度，也就是当前W取值下的不理想程度。它是一个非负实值函数，通常用 $L(Y,f(x))$ 来表示。损失函数越小，模型的鲁棒性就越好。损失函数(一次预测好坏)是经验风险函数（平均意义下模型好坏）的核心部分，也是结构风险函数的重要组成部分。　　一些">
+<meta name="keywords" content="笔记,cs231n,课程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS31n学习笔记&lt;三&gt;损失函数与最优化">
+<meta property="og:url" content="http://yoursite.com/2018/08/22/CS31n学习笔记三----损失函数与最优化/index.html">
 <meta property="og:site_name" content="fahai的博客">
-<meta property="og:description" content="重庆邮电大学19届研究僧一枚">
+<meta property="og:description" content="1、前言　　损失函数（Loss function）或者代价函数（Cost function）是用来估量你模型的预测值 $f(x)$ 与真实值 Y 的不一致程度，也就是当前W取值下的不理想程度。它是一个非负实值函数，通常用 $L(Y,f(x))$ 来表示。损失函数越小，模型的鲁棒性就越好。损失函数(一次预测好坏)是经验风险函数（平均意义下模型好坏）的核心部分，也是结构风险函数的重要组成部分。　　一些">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-26T03:00:28.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fahai的博客">
-<meta name="twitter:description" content="重庆邮电大学19届研究僧一枚">
+<meta name="twitter:title" content="CS31n学习笔记&lt;三&gt;损失函数与最优化">
+<meta name="twitter:description" content="1、前言　　损失函数（Loss function）或者代价函数（Cost function）是用来估量你模型的预测值 $f(x)$ 与真实值 Y 的不一致程度，也就是当前W取值下的不理想程度。它是一个非负实值函数，通常用 $L(Y,f(x))$ 来表示。损失函数越小，模型的鲁棒性就越好。损失函数(一次预测好坏)是经验风险函数（平均意义下模型好坏）的核心部分，也是结构风险函数的重要组成部分。　　一些">
   
     <link rel="alternative" href="/atom.xml" title="fahai的博客" type="application/atom+xml">
   
@@ -161,36 +163,108 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-CS31n学习笔记三----损失函数与最优化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      CS31n学习笔记&lt;三&gt;损失函数与最优化
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/22/CS31n学习笔记三----损失函数与最优化/" class="archive-article-date">
+
+        
+        <a href="/2018/08/22/CS31n学习笔记三----损失函数与最优化/" class="archive-article-date">
   	<time datetime="2018-08-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/CS31n学习笔记三----损失函数与最优化/">CS31n学习笔记&lt;三&gt;损失函数与最优化</a>
-    </h1>
-  
+        
+		
+		<!-- 目录内容 -->
+		
+			<p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+			<span class="btn-bg"></span>
+			<span class="btn-text">文章导航</span>
+			</p>
+			<div id="toc-article" class="toc-article">
+				<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+				<strong class="toc-title">文章目录</strong>
+				<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、损失函数"><span class="toc-number">2.</span> <span class="toc-text">2、损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-0-1-Loss"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 0-1 Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Hinge-Loss"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Hinge Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Softmax-Loss"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 Softmax Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Absolute-Loss"><span class="toc-number">2.4.</span> <span class="toc-text">2.5 Absolute Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Square-Loss"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 Square Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-Exponential-Loss"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 Exponential Loss</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、最优化"><span class="toc-number">3.</span> <span class="toc-text">3、最优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-最朴素的思想：随机搜索"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 最朴素的思想：随机搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-梯度下降"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 梯度下降</span></a></li></ol></li></ol>
+		   </div>
+		   <script type="text/javascript">
+			function showToc(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:block");
+				show_toc_btn.setAttribute("style","display:none");
+				};
+			function showBtn(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:none");
+				show_toc_btn.setAttribute("style","display:block");
+				};
+		   </script>
+		     
+		<!-- 目录内容结束 -->
+	
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h2><p>　　<strong>损失函数（Loss function）</strong>或者<strong>代价函数（Cost function）</strong>是用来估量你模型的预测值 $f(x)$ 与真实值 Y 的不一致程度，也就是当前W取值下的不理想程度。它是一个<strong>非负实值函数</strong>，通常用 $L(Y,f(x))$ 来表示。损失函数越小，模型的鲁棒性就越好。损失函数(一次预测好坏)是<strong>经验风险函数</strong>（平均意义下模型好坏）的核心部分，也是<strong>结构风险函数</strong>的重要组成部分。<br>　　一些资源：<a href="http://www.cnblogs.com/wangxiu/p/5668659.html" target="_blank" rel="noopener">CS231n 2016 通关 第三章-SVM与Softmax</a><br><a id="more"></a></p>
+<h2 id="2、损失函数"><a href="#2、损失函数" class="headerlink" title="2、损失函数"></a>2、损失函数</h2><h3 id="2-1-0-1-Loss"><a href="#2-1-0-1-Loss" class="headerlink" title="2.1 0-1 Loss"></a>2.1 0-1 Loss</h3><p>　　分类错误时损失为1，分类正确</p>
+<script type="math/tex; mode=display">L(Y, f(x))=\begin{cases}
+             1, & Y \neq f(x)\\
+             0, & Y = f(x)
+            \end{cases}</script><h3 id="2-2-Hinge-Loss"><a href="#2-2-Hinge-Loss" class="headerlink" title="2.2 Hinge Loss"></a>2.2 Hinge Loss</h3><p>　　<strong>折页损失</strong>，也称<strong>铰链损失</strong>，常用于SVM<strong>最大间隔法</strong>中。将所有不正确分类得分与正确类别（标签）得分之差加1，再与0比较，取最大值求和。1为安全系数，当然可以任意设置，W成比例缩放，损失也会成比例变化，所以分数与W的度量相关。</p>
+<script type="math/tex; mode=display">L(Y, f(x))=\frac{1}{N}\sum_i=1^N\sum_{j\neq y_i}\max{(0, f(x_i)_j - f(x_i)_{y_i}+1)}</script><p>　<strong>问题1</strong>：如果在求loss时，允许j=y_i会怎么样？（L加1）<br>　<strong>问题2</strong>：如果对1个样本做loss时使用对loss做平均，而不是求和，会怎样？（损失绝对值减小，相当于sum乘以常系数，问题1,2均不会影响最终的W）<br>　<strong>问题3</strong>：若取平方会怎么样？（这其实是二次的hinge loss，在某些情况下会使用。并且某些情况下结果比一次的hinge loss更好，此处使用一次形式。）<br>　<strong>问题4</strong>：hinge loss的最大最小损失是多少？（0，无穷大）<br>　<strong>问题5</strong>：通常会以较小较小的值初始化参数w，此时得到的scores接近于0，那么这时候的loss是？(此时正确score与错误score的差接近于0，对于N类，loss的结果是N-1。)<br>存在的问题：若w是损失函数为0，w按比例变化，损失函数值不变。<br>解决办法：引入正则项，对损失函数进行约束$R(w)$，$R(w)$可以衡量w的好坏，因此不仅要求更好的拟合数据，也希望优化w， 同时可以防止过拟合，使得在测试集上效果更好。</p>
+<script type="math/tex; mode=display">L(Y, f(x))=\frac{1}{N}\sum_i=1^N\sum_{j\neq y_i}\max{(0, f(x_i)_j - f(x_i)_{y_i}+1)} + \lambda R(w)</script><p>　常见的正则项有：<br>　L2正则项：<br>　L1正则项：<br>　弹性网络（Elastic Net）L1+L2：<br>　max-norm regularization：<br>　Dropout：<br>　加入正则，对w进行约束，常用的正则有L1、L2。，L1趋于选取<strong>稀疏</strong>的参数，起到特征选择的作用L2趋于选取数值较小且<strong>离散</strong>的参数，尽可能的考虑的大部分特征。SVM目标函数即：L2 + hinge loss</p>
+<h3 id="2-3-Softmax-Loss"><a href="#2-3-Softmax-Loss" class="headerlink" title="2.3 Softmax Loss"></a>2.3 Softmax Loss</h3><p>　　在逻辑回归的推导中，它假设样本服从<strong>伯努利分布（0-1分布）</strong>，然后求得满足该分布的似然函数，接着取对数求极值等等。而逻辑回归并没有求似然函数的极值，而是把<strong>极大化</strong>当做是一种思想，进而推导出它的经验风险函数为：<strong>最小化负的似然函数</strong>，softmax只是其在多维上的推广，适用于多分类。<br>　　得分函数f(x, w)的值score看作是<strong>未标准化的对数概率</strong>，于是得到每一类的<strong>未标准化概率</strong>为$e^score$,进一步标准化得到0-1之间的概率，且所以的概率之和为1.大的score代表此score对应图像属于的某一个class的概率大。该函数就是softmax函数：<br>　　<script type="math/tex">softmax = P(Y = y_i|X = x_i)= \frac{e^{sy_i}}{\sum_j e^{s_j}}</script><br>　　我们要是正确类别对数概率最大，根据损失函数，要是负的正确分类概率最小。<br>　　使用似然估计作为loss，本来是似然估计越大越好，但通常loss使用越小时更直观：<br>　　<script type="math/tex">L_i = -\log{P(Y = y_i|X = x_i)}</script><br>　　即最终表达式：<script type="math/tex">L_i = -\log{\frac{e^{sy_i}}{\sum_j e^{s_j}}}</script>
+　　</p>
+<script type="math/tex; mode=display">L(Y, f(x))=\frac{1}{N}\sum_{i=1}^N{y_i\dot \log{f(x_i) + (1 - y_i)\log(1-f(x_i))}}</script><p>　　<strong>问题1</strong>：损失函数最大值最小值？（0，无穷）<br>　　<strong>问题2</strong>：初始化w为很小值时，损失值？（$-log{\frac{1}{CLASSES}}$）<br>　　softmax与SVM的区别：SVM只考虑支持向量对分类结果的影响，softmax考虑所有数据对结果的影响。</p>
+<h3 id="2-5-Absolute-Loss"><a href="#2-5-Absolute-Loss" class="headerlink" title="2.5 Absolute Loss"></a>2.5 Absolute Loss</h3><p>　　常用于回归任务中。</p>
+<script type="math/tex; mode=display">L(Y, f(x))=\frac{1}{N}\sum_i^N{|f(x_i) - y_i|}</script><h3 id="2-5-Square-Loss"><a href="#2-5-Square-Loss" class="headerlink" title="2.5 Square Loss"></a>2.5 Square Loss</h3><p>　　或者均方误差（MSE），常用于回归任务中。</p>
+<script type="math/tex; mode=display">L(Y, f(x))=\frac{1}{N}\sum_i^N{|f(x_i) - y_i|^2}</script><h3 id="2-6-Exponential-Loss"><a href="#2-6-Exponential-Loss" class="headerlink" title="2.6 Exponential Loss"></a>2.6 Exponential Loss</h3><p>　　指数损失常用于boosting算法中。</p>
+<script type="math/tex; mode=display">L(Y, f(x))=\sum_i^N{e^{-{y_i}{f(x_i)}}}</script><h2 id="3、最优化"><a href="#3、最优化" class="headerlink" title="3、最优化"></a>3、最优化</h2><p> 学习就是个最优化问题，不断更新w，使得损失最小。</p>
+<h3 id="3-1-最朴素的思想：随机搜索"><a href="#3-1-最朴素的思想：随机搜索" class="headerlink" title="3.1 最朴素的思想：随机搜索"></a>3.1 最朴素的思想：随机搜索</h3><p> 　　计算量大，效果不行，不可取。</p>
+<h3 id="3-2-梯度下降"><a href="#3-2-梯度下降" class="headerlink" title="3.2 梯度下降"></a>3.2 梯度下降</h3><p> 　　一维函数梯度：</p>
+<script type="math/tex; mode=display">\frac{df(x)}{d_x} = \lim_{1 \to \infty}\frac{f(x+h) - f(x)}{h}</script><p> 　　<a href="https://blog.csdn.net/kyang624823/article/details/78900043" target="_blank" rel="noopener">梯度检验：</a>，计算梯度的方式有两种：数值梯度（numerical gradient）、解析梯度（analytic gradient）。<br> 　　数值梯度：根据公式右边计算，优点是容易编程实现，不要求函数可微，然而，缺点也很明显，通常是近似解，同时求解速度很慢，针对多维数据，需反复计算求每一维的梯度值。因此在设计机器学习目标函数时，通常设计成可微的函数，可以快速地通过微积分求解其解析梯度，同时这个梯度是确切解。<br> 　　<strong>解析梯度</strong>：通过微积分公式直接对损失函数求导进行计算，无需反复计算，效率高，但易出错，毕竟涉及复杂数学问题。<br> 　　<br>　　<a href="梯度下降（BGD）、随机梯度下降（SGD）、Mini-batch Gradient Descent、带Mini-batch的SGD">梯度下降（BGD）、随机梯度下降（SGD）、Mini-batch Gradient Descent、带Mini-batch的SGD</a><br>　　<strong>梯度下降</strong>（BGD）：通过梯度的负值<em>步长一点一点更新w值，使得损失减少。步长也叫学习率，是一个非常重要的超参数（手工设置，模型不能学）。基于全部数据更新参数，得到全局最优解。<br>　　<strong>随机梯度下降</strong>（SGD）：训练集中随机选取一个样本，更新参数，局部最优解。通常batch_size大小根据GPU内存大小设置。<br>　　<strong>小批量批梯度下降</strong>（mini-batch GD）:训练集中，选取小批量数据更新参数。<br>　　<em>*小批量随机梯度下降</em></em>（mini-batch SGD）：上述两者的结合。
+ 　　</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -210,381 +284,143 @@
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/20/CS31n学习笔记二----k-NN与线性分类器/" class="archive-article-date">
-  	<time datetime="2018-08-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/20/CS31n学习笔记二----k-NN与线性分类器/">CS31n学习笔记&lt;二&gt;k-NN与线性分类器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">课程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/19/CS31n学习笔记一----计算机视觉发展史/" class="archive-article-date">
-  	<time datetime="2018-08-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/19/CS31n学习笔记一----计算机视觉发展史/">CS31n学习笔记&lt;一&gt;计算机视觉发展史</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">课程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/20/BAT机器学习面试题库（1-100）/" class="archive-article-date">
-  	<time datetime="2018-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/20/BAT机器学习面试题库（1-100）/">BAT机器学习面试题库（1-100）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/20/2018搜狐内容识别算法大赛总结/" class="archive-article-date">
-  	<time datetime="2018-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/20/2018搜狐内容识别算法大赛总结/">2018搜狐内容识别算法大赛总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">比赛</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/23/开始我的第一篇hexo博客/" class="archive-article-date">
-  	<time datetime="2018-05-23T03:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/开始我的第一篇hexo博客/">开始我的第一篇hexo博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/23/test/" class="archive-article-date">
-  	<time datetime="2018-05-23T03:32:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/test/">test</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/21/MobaXterm-基本的使用方法/" class="archive-article-date">
-  	<time datetime="2018-05-21T07:45:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/21/MobaXterm-基本的使用方法/">MobaXterm 基本的使用方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工具使用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/18/马上金融---图像去污比赛总结/" class="archive-article-date">
-  	<time datetime="2018-05-18T11:41:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/18/马上金融---图像去污比赛总结/">马上金融---图像去污比赛总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">比赛</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/18/2017搜狐图文匹配算法大赛总结/" class="archive-article-date">
-  	<time datetime="2017-06-18T11:41:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/2017搜狐图文匹配算法大赛总结/">2017搜狐图文匹配算法大赛总结</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">比赛</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/22/CS31n学习笔记三----损失函数与最优化/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/08/20/CS31n学习笔记二----k-NN与线性分类器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CS31n学习笔记&lt;二&gt;k-NN与线性分类器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、损失函数"><span class="toc-number">2.</span> <span class="toc-text">2、损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-0-1-Loss"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 0-1 Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Hinge-Loss"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Hinge Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Softmax-Loss"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 Softmax Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Absolute-Loss"><span class="toc-number">2.4.</span> <span class="toc-text">2.5 Absolute Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Square-Loss"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 Square Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-Exponential-Loss"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 Exponential Loss</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、最优化"><span class="toc-number">3.</span> <span class="toc-text">3、最优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-最朴素的思想：随机搜索"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 最朴素的思想：随机搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-梯度下降"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 梯度下降</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNjc2NC8xMzI5OQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+  
+  
+  
+  
   
 
-    
+  
+
+  
+
+  
+
+
 
 
           </div>
@@ -607,8 +443,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
