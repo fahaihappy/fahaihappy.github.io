@@ -9,14 +9,14 @@
   <title>CS31n学习笔记&lt;三&gt;损失函数与最优化 | fahai的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、前言　　损失函数（Loss function）或者代价函数（Cost function）是用来估量你模型的预测值 $f(x)$ 与真实值 Y 的不一致程度，也就是当前W取值下的不理想程度。它是一个非负实值函数，通常用 $L(Y,f(x))$ 来表示。损失函数越小，模型的鲁棒性就越好。损失函数(一次预测好坏)是经验风险函数（平均意义下模型好坏）的核心部分，也是结构风险函数的重要组成部分。　　一些">
-<meta name="keywords" content="笔记,cs231n,课程">
+<meta name="keywords" content="cs231n,笔记,课程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS31n学习笔记&lt;三&gt;损失函数与最优化">
 <meta property="og:url" content="http://yoursite.com/2018/08/22/CS31n学习笔记三----损失函数与最优化/index.html">
 <meta property="og:site_name" content="fahai的博客">
 <meta property="og:description" content="1、前言　　损失函数（Loss function）或者代价函数（Cost function）是用来估量你模型的预测值 $f(x)$ 与真实值 Y 的不一致程度，也就是当前W取值下的不理想程度。它是一个非负实值函数，通常用 $L(Y,f(x))$ 来表示。损失函数越小，模型的鲁棒性就越好。损失函数(一次预测好坏)是经验风险函数（平均意义下模型好坏）的核心部分，也是结构风险函数的重要组成部分。　　一些">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-26T03:00:28.189Z">
+<meta property="og:updated_time" content="2018-09-06T03:45:49.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS31n学习笔记&lt;三&gt;损失函数与最优化">
 <meta name="twitter:description" content="1、前言　　损失函数（Loss function）或者代价函数（Cost function）是用来估量你模型的预测值 $f(x)$ 与真实值 Y 的不一致程度，也就是当前W取值下的不理想程度。它是一个非负实值函数，通常用 $L(Y,f(x))$ 来表示。损失函数越小，模型的鲁棒性就越好。损失函数(一次预测好坏)是经验风险函数（平均意义下模型好坏）的核心部分，也是结构风险函数的重要组成部分。　　一些">
@@ -44,7 +44,8 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #CDC9A5"></div>
+<!-- <div class="overlay" style="background: #CDC9A5"></div> -->
+<div class="overlay" style="background: url('/assets/blogImg/cyy.jpg') no-repeat center bottom;background-size: cover;"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -54,7 +55,7 @@
 		  <h1 class="header-author"><a href="/">申发海</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">瞎折腾的fahai</p>
+		<p class="header-subtitle">重庆邮电大学19届研究僧一枚，找工作中......</p>
 		
 
 		<nav class="header-menu">
@@ -62,7 +63,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/photos">相册</a></li>
+				<li><a href="/photos/">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -81,7 +82,7 @@
     			
             
 		</nav>
-		<nav class="header-nav">
+		<nav class="header-nav" style="display:block;">
 			<div class="social">
 				
 					<a class="github" target="_blank" href="https://github.com/fahaihappy" title="github"><i class="icon-github"></i></a>
@@ -96,10 +97,17 @@
 		        
 			</div>
 		</nav>
-	</header>		
+		
+		
+	
+	</header>	
+	<div style="position:absolute; bottom: 60px; left:36px; width:76%;">
+		<iframe width=100% height=86 frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1306496848&auto=0&height=66"></iframe>
+	</div>	
 </div>
 
     </div>
+   
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
@@ -116,7 +124,7 @@
 			  <h1 class="header-author js-header-author">申发海</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>瞎折腾的fahai<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>重庆邮电大学19届研究僧一枚，找工作中......<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -148,7 +156,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/photos">相册</a></li>
+					<li style="width: 50%"><a href="/photos/">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,6 +187,27 @@
   	<time datetime="2018-08-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
 </a>
         
+		
+		
+			<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.7k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">6分</span>
+      </span>
+    </span>
+</div>
+		
 		
 		<!-- 目录内容 -->
 		
@@ -229,7 +258,7 @@
 <script type="math/tex; mode=display">L(Y, f(x))=\sum_i^N{e^{-{y_i}{f(x_i)}}}</script><h2 id="3、最优化"><a href="#3、最优化" class="headerlink" title="3、最优化"></a>3、最优化</h2><p> 学习就是个最优化问题，不断更新w，使得损失最小。</p>
 <h3 id="3-1-最朴素的思想：随机搜索"><a href="#3-1-最朴素的思想：随机搜索" class="headerlink" title="3.1 最朴素的思想：随机搜索"></a>3.1 最朴素的思想：随机搜索</h3><p> 　　计算量大，效果不行，不可取。</p>
 <h3 id="3-2-梯度下降"><a href="#3-2-梯度下降" class="headerlink" title="3.2 梯度下降"></a>3.2 梯度下降</h3><p> 　　一维函数梯度：</p>
-<script type="math/tex; mode=display">\frac{df(x)}{d_x} = \lim_{1 \to \infty}\frac{f(x+h) - f(x)}{h}</script><p> 　　<a href="https://blog.csdn.net/kyang624823/article/details/78900043" target="_blank" rel="noopener">梯度检验：</a>，计算梯度的方式有两种：数值梯度（numerical gradient）、解析梯度（analytic gradient）。<br> 　　数值梯度：根据公式右边计算，优点是容易编程实现，不要求函数可微，然而，缺点也很明显，通常是近似解，同时求解速度很慢，针对多维数据，需反复计算求每一维的梯度值。因此在设计机器学习目标函数时，通常设计成可微的函数，可以快速地通过微积分求解其解析梯度，同时这个梯度是确切解。<br> 　　<strong>解析梯度</strong>：通过微积分公式直接对损失函数求导进行计算，无需反复计算，效率高，但易出错，毕竟涉及复杂数学问题。<br> 　　<br>　　<a href="梯度下降（BGD）、随机梯度下降（SGD）、Mini-batch Gradient Descent、带Mini-batch的SGD">梯度下降（BGD）、随机梯度下降（SGD）、Mini-batch Gradient Descent、带Mini-batch的SGD</a><br>　　<strong>梯度下降</strong>（BGD）：通过梯度的负值<em>步长一点一点更新w值，使得损失减少。步长也叫学习率，是一个非常重要的超参数（手工设置，模型不能学）。基于全部数据更新参数，得到全局最优解。<br>　　<strong>随机梯度下降</strong>（SGD）：训练集中随机选取一个样本，更新参数，局部最优解。通常batch_size大小根据GPU内存大小设置。<br>　　<strong>小批量批梯度下降</strong>（mini-batch GD）:训练集中，选取小批量数据更新参数。<br>　　<em>*小批量随机梯度下降</em></em>（mini-batch SGD）：上述两者的结合。
+<script type="math/tex; mode=display">\frac{df(x)}{d_x} = \lim_{1 \to \infty}\frac{f(x+h) - f(x)}{h}</script><p> 　　<a href="https://blog.csdn.net/kyang624823/article/details/78900043" target="_blank" rel="noopener">梯度检验：</a>，计算梯度的方式有两种：数值梯度（numerical gradient）、解析梯度（analytic gradient）。<br> 　　数值梯度：根据公式右边计算，优点是容易编程实现，不要求函数可微，然而，缺点也很明显，通常是近似解，同时求解速度很慢，针对多维数据，需反复计算求每一维的梯度值。因此在设计机器学习目标函数时，通常设计成可微的函数，可以快速地通过微积分求解其解析梯度，同时这个梯度是确切解。<br> 　　<strong>解析梯度</strong>：通过微积分公式直接对损失函数求导进行计算，无需反复计算，效率高，但易出错，毕竟涉及复杂数学问题。<br> 　　<br>　　<a href="梯度下降（BGD）、随机梯度下降（SGD）、Mini-batch Gradient Descent、带Mini-batch的SGD">梯度下降（BGD）、随机梯度下降（SGD）、Mini-batch Gradient Descent、带Mini-batch的SGD</a><br>　　<strong>梯度下降</strong>（BGD）：通过梯度的负值 * 步长一点一点更新w值，使得损失减少。步长也叫学习率，是一个非常重要的超参数（手工设置，模型不能学）。基于全部数据更新参数，得到全局最优解。<br>　　<strong>随机梯度下降</strong>（SGD）：训练集中随机选取一个样本，更新参数，局部最优解。通常batch_size大小根据GPU内存大小设置。<br>　　<strong>小批量批梯度下降</strong> (mini-batch GD)：训练集中，选取小批量数据更新参数。<br>　　<strong>小批量随机梯度下降</strong>（mini-batch SGD）：上述两者的结合。
  　　</p>
 
       
@@ -270,11 +299,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -349,8 +378,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/08/20/CS31n学习笔记二----k-NN与线性分类器/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CS31n学习笔记&lt;二&gt;k-NN与线性分类器</div>
+    <a href="/2018/08/20/BAT机器学习面试题库（100-200）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BAT机器学习面试题库(101-200)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -437,6 +466,11 @@
       	</div>
     </div>
   </div>
+  
+<span id="busuanzi_container_site_uv">  访问用户<span id="busuanzi_value_site_uv"></span>人次</span>
+
+<span id="busuanzi_container_site_pv"> 总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
 </footer>
     </div>
     <script>
@@ -482,6 +516,8 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+
+<script  async  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -542,7 +578,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,11 +586,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
+                <a href="javascript:void(0)" class="js-tag color3">课程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">课程</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,6 +647,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="http://blog.aschool.cn/17930" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>12计软班级博客</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.cyy11.cn" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>曹依依博客</a>
             </li>
           
         </ul>

@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>test | fahai的博客</title>
+  <title>hexo+github搭建博客及相关坑位 | fahai的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="var ap = new APlayer({             element: document.getElementById(&quot;aplayer-PwlFQCeh&quot;),             narrow: false,             autoplay: false,">
+  <meta name="description" content="一. 前言　　CS专业七年了，学得很多东西没怎么记录，一晃就忘得差不多了。 觉得很不错的大佬文章这里收藏一点，那里收藏一点，也没有一个统一的记录方式。 想通过这个个人博客写点东西，记录自己的成长过程和一些收获。 浏览了网上很多资源，学着用hexo和github搭建自己的博客，该文记录本博客的搭建过程。  参考链接：我是如何利用Github Pages搭建起我的博客，细数一路的坑Hexo + yil">
+<meta name="keywords" content="工具使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2018/05/23/test/index.html">
+<meta property="og:title" content="hexo+github搭建博客及相关坑位">
+<meta property="og:url" content="http://yoursite.com/2018/05/21/hexo+github搭建博客及相关坑位/index.html">
 <meta property="og:site_name" content="fahai的博客">
-<meta property="og:description" content="var ap = new APlayer({             element: document.getElementById(&quot;aplayer-PwlFQCeh&quot;),             narrow: false,             autoplay: false,">
+<meta property="og:description" content="一. 前言　　CS专业七年了，学得很多东西没怎么记录，一晃就忘得差不多了。 觉得很不错的大佬文章这里收藏一点，那里收藏一点，也没有一个统一的记录方式。 想通过这个个人博客写点东西，记录自己的成长过程和一些收获。 浏览了网上很多资源，学着用hexo和github搭建自己的博客，该文记录本博客的搭建过程。  参考链接：我是如何利用Github Pages搭建起我的博客，细数一路的坑Hexo + yil">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-24T13:01:03.071Z">
+<meta property="og:updated_time" content="2018-09-09T09:03:52.317Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="var ap = new APlayer({             element: document.getElementById(&quot;aplayer-PwlFQCeh&quot;),             narrow: false,             autoplay: false,">
+<meta name="twitter:title" content="hexo+github搭建博客及相关坑位">
+<meta name="twitter:description" content="一. 前言　　CS专业七年了，学得很多东西没怎么记录，一晃就忘得差不多了。 觉得很不错的大佬文章这里收藏一点，那里收藏一点，也没有一个统一的记录方式。 想通过这个个人博客写点东西，记录自己的成长过程和一些收获。 浏览了网上很多资源，学着用hexo和github搭建自己的博客，该文记录本博客的搭建过程。  参考链接：我是如何利用Github Pages搭建起我的博客，细数一路的坑Hexo + yil">
   
     <link rel="alternative" href="/atom.xml" title="fahai的博客" type="application/atom+xml">
   
@@ -45,7 +46,8 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #CDC9A5"></div>
+<!-- <div class="overlay" style="background: #CDC9A5"></div> -->
+<div class="overlay" style="background: url('/assets/blogImg/cyy.jpg') no-repeat center bottom;background-size: cover;"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -55,7 +57,7 @@
 		  <h1 class="header-author"><a href="/">申发海</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">瞎折腾的fahai</p>
+		<p class="header-subtitle">重庆邮电大学19届研究僧一枚，找工作中......</p>
 		
 
 		<nav class="header-menu">
@@ -63,7 +65,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/photos">相册</a></li>
+				<li><a href="/photos/">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -82,7 +84,7 @@
     			
             
 		</nav>
-		<nav class="header-nav">
+		<nav class="header-nav" style="display:block;">
 			<div class="social">
 				
 					<a class="github" target="_blank" href="https://github.com/fahaihappy" title="github"><i class="icon-github"></i></a>
@@ -97,10 +99,17 @@
 		        
 			</div>
 		</nav>
-	</header>		
+		
+		
+	
+	</header>	
+	<div style="position:absolute; bottom: 60px; left:36px; width:76%;">
+		<iframe width=100% height=86 frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1306496848&auto=0&height=66"></iframe>
+	</div>	
 </div>
 
     </div>
+   
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
@@ -117,7 +126,7 @@
 			  <h1 class="header-author js-header-author">申发海</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>瞎折腾的fahai<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>重庆邮电大学19届研究僧一枚，找工作中......<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -149,7 +158,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/photos">相册</a></li>
+					<li style="width: 50%"><a href="/photos/">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -164,24 +173,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-hexo+github搭建博客及相关坑位" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      hexo+github搭建博客及相关坑位
     </h1>
   
 
         
-        <a href="/2018/05/23/test/" class="archive-article-date">
-  	<time datetime="2018-05-23T03:32:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
+        <a href="/2018/05/21/hexo+github搭建博客及相关坑位/" class="archive-article-date">
+  	<time datetime="2018-05-21T07:45:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
 </a>
         
 		
+		
+			<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.1k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">4分</span>
+      </span>
+    </span>
+</div>
+		
+		
 		<!-- 目录内容 -->
+		
+			<p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+			<span class="btn-bg"></span>
+			<span class="btn-text">文章导航</span>
+			</p>
+			<div id="toc-article" class="toc-article">
+				<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+				<strong class="toc-title">文章目录</strong>
+				<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-前言"><span class="toc-number">1.</span> <span class="toc-text">一. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、所需要的环境"><span class="toc-number">2.</span> <span class="toc-text">二、所需要的环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-安装hexo"><span class="toc-number">3.</span> <span class="toc-text">三.安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、布置博客"><span class="toc-number">4.</span> <span class="toc-text">四、布置博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、-hexo常用命令"><span class="toc-number">5.</span> <span class="toc-text">五、 hexo常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、-些遇到的问题"><span class="toc-number">6.</span> <span class="toc-text">六、 些遇到的问题</span></a></li></ol>
+		   </div>
+		   <script type="text/javascript">
+			function showToc(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:block");
+				show_toc_btn.setAttribute("style","display:none");
+				};
+			function showBtn(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:none");
+				show_toc_btn.setAttribute("style","display:block");
+				};
+		   </script>
 		     
 		<!-- 目录内容结束 -->
 	
@@ -189,13 +243,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-        <div id="aplayer-PwlFQCeh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一. 前言"></a>一. 前言</h2><p>　　CS专业七年了，学得很多东西没怎么记录，一晃就忘得差不多了。 觉得很不错的大佬文章这里收藏一点，那里收藏一点，也没有一个统一的记录方式。 想通过这个个人博客写点东西，记录自己的成长过程和一些收获。 浏览了网上很多资源，学着用hexo和github搭建自己的博客，该文记录本博客的搭建过程。</p>
+<blockquote>
+<p>参考链接：<br><a href="https://cczeng.github.io/2017/05/03/git/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8Github-Pages%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E7%BB%86%E6%95%B0%E4%B8%80%E8%B7%AF%E7%9A%84%E5%9D%91/" target="_blank" rel="noopener">我是如何利用Github Pages搭建起我的博客，细数一路的坑</a><br><a href="http://www.54tianzhisheng.cn/2017/12/18/hexo-yilia/" target="_blank" rel="noopener">Hexo + yilia 搭建博客可能会遇到的所有疑问</a><br><a href="http://lawlite.me/2017/04/13/Hexo-Github%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">Hexo+Github实现相册功能 </a><br><a href="http://www.54tianzhisheng.cn/2017/06/13/Hexo-yilia-toc/" target="_blank" rel="noopener">Hexo + yilia 主题实现文章目录</a><br><a href="https://www.cnblogs.com/pengwenzheng/p/8407479.html" target="_blank" rel="noopener">号外号外！解决github+hexo+yilia评论插件的问题！！！</a><br><a href="https://blog.csdn.net/qq_22656383/article/details/79393146" target="_blank" rel="noopener">hexo 博客小功能添加-评论、萌妹纸、相册、字数统计…</a><br><a id="more"></a></p>
+</blockquote>
+<h2 id="二、所需要的环境"><a href="#二、所需要的环境" class="headerlink" title="二、所需要的环境"></a>二、所需要的环境</h2><p>安装Node.js()<br><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a><br>配置环境变量，windows下安装配置环境，一键完成很简单。</p>
+<p>安装git（必须）<br>可以查看廖雪峰老师的git教程<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000学习安装" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000学习安装</a><br>下载地址：<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">https://git-for-windows.github.io/</a><br>注册github账号:<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><br>配置SSH-key:<br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000。" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000。</a><br>创建名为userName.github.io的仓库,userName是你申请的用户名。</p>
+<h2 id="三-安装hexo"><a href="#三-安装hexo" class="headerlink" title="三.安装hexo"></a>三.安装hexo</h2><p>安装Hexo:</p>
+<p>右键git bash,输入npm install -g hexo<br>初始化Hexo:</p>
+<p>自定义创建一个文件夹（用来放置你的博客）,点击该文件夹,输入 &gt; hexo init<br>3.然后生成部署文件，启动本地服务</p>
+<blockquote>
+<p>hexo g 或者hexo generate hexo s 或者hexo server，可以在<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看</p>
+</blockquote>
+<p>至此hexo已经安装完毕了,我安装过程中出现了以下问题：</p>
+<p>在hexo install过程中可能出现<br>npm WARN deprecated swig@1.4.2: This package is no longer maintained<br>只是说这个包不再维护了，后面好像并不影响使用，当然你也可以npm -g install npm，更新安装。</p>
+<h2 id="四、布置博客"><a href="#四、布置博客" class="headerlink" title="四、布置博客"></a>四、布置博客</h2><p>熟悉git的简单操作<br>选中你的文件夹 git init ，创建仓库<br>git add.``git commit -m”标记”，提交文件修改 git remote add origin <a href="https://github.com/Scyzin/scyzin.github.io.git" target="_blank" rel="noopener">https://github.com/Scyzin/scyzin.github.io.git</a> 与你的github仓库连接<br>git push -u origin master，将你的修改上传到github上。<br>博客主题更换<br>hexo默认的主题是landscape，在themes文件夹下，可以使用别人开发好的主题，这里有很多，我使用的是这一个: <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a><br>下载之后将文件夹整个复制到D:\blog\themes目录下，再修改D:\blog 的下_config.yml文件里的theme：theme: hexo-theme-yilia。<br>部署配置<br>配置到github对应的仓库中:</p>
+<p>1.为hexo安装git插件:npm install —save hexo-deployer-git，否则会出现 hexo d时会出现 ERROR Deployer not found: git<br>2.修改D:\blog 的下_config.yml文件</p>
+<p>deploy:<br>type: git<br>repo: <a href="https://github.com/Scyzin/scyzin.github.io.git" target="_blank" rel="noopener">https://github.com/Scyzin/scyzin.github.io.git</a><br>branch: master<br>加入如下配置：<br>冒号后面都必须有空格。</p>
+<p>Hexo配置文件说明:D:\blog`的下_config.yml<br>常用的配置熟悉下就会了，这里可以选择学习一个扩展配置。<a href="http://blog.csdn.net/u013082989/article/details/70144934?locationNum=3&amp;fps=1" target="_blank" rel="noopener">http://blog.csdn.net/u013082989/article/details/70144934?locationNum=3&amp;fps=1</a><br>hexo d，将博客发布在github.io上。<br>至此你就可以直接通过scyzin.github.io访问你的博客。当然你也可以选择购买域名，绑定自己的地址访问。</p>
+<h2 id="五、-hexo常用命令"><a href="#五、-hexo常用命令" class="headerlink" title="五、 hexo常用命令"></a>五、 hexo常用命令</h2><p>hexo new “postName” #新建文章<br>其中my new post为文章标题，执行命令后，会在项目\source_posts中生成my new post.md，用markdown编辑器打开编辑就行了。</p>
+<p>当然，也可以直接在\source_posts中新建一个md文件，我就是这么做的。**</p>
+<p>hexo new page “pageName”　新建页面<br>hexo generate　生成静态页面至public目录<br>hexo server　开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #将.deploy目录部署到GitHub<br>hexo help　查看帮助<br>简写:<br>hexo n == hexo new<br>hexo g == hexo generate<br>hexo s == hexo server<br>hexo d == hexo deployexo version #查看Hexo的版本</p>
+<h2 id="六、-些遇到的问题"><a href="#六、-些遇到的问题" class="headerlink" title="六、 些遇到的问题"></a>六、 些遇到的问题</h2><p>支持公式：<a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在Hexo中渲染MathJax数学公式</a><br>添加音乐：<br>
+        <div id="aplayer-hZGatUPV" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-PwlFQCeh"),
+            element: document.getElementById("aplayer-hZGatUPV"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -209,7 +284,8 @@
           });
           window.aplayers || (window.aplayers = []);
           window.aplayers.push(ap);
-        </script> 
+        </script> </p>
+
       
 
       
@@ -243,6 +319,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工具使用</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -293,7 +380,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/23/test/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/21/hexo+github搭建博客及相关坑位/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,18 +394,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/23/开始我的第一篇hexo博客/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/06/20/2018搜狐内容识别算法大赛总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          开始我的第一篇hexo博客
+          2018搜狐内容识别算法大赛总结
         
       </div>
     </a>
   
   
-    <a href="/2018/05/21/MobaXterm-基本的使用方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MobaXterm 基本的使用方法</div>
+    <a href="/2018/05/18/马上金融---图像去污比赛总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">马上金融---图像去污比赛总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -337,6 +424,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-前言"><span class="toc-number">1.</span> <span class="toc-text">一. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、所需要的环境"><span class="toc-number">2.</span> <span class="toc-text">二、所需要的环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-安装hexo"><span class="toc-number">3.</span> <span class="toc-text">三.安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、布置博客"><span class="toc-number">4.</span> <span class="toc-text">四、布置博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、-hexo常用命令"><span class="toc-number">5.</span> <span class="toc-text">五、 hexo常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、-些遇到的问题"><span class="toc-number">6.</span> <span class="toc-text">六、 些遇到的问题</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -392,6 +492,11 @@
       	</div>
     </div>
   </div>
+  
+<span id="busuanzi_container_site_uv">  访问用户<span id="busuanzi_value_site_uv"></span>人次</span>
+
+<span id="busuanzi_container_site_pv"> 总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
 </footer>
     </div>
     <script>
@@ -437,6 +542,8 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+
+<script  async  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -497,7 +604,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,11 +612,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
+                <a href="javascript:void(0)" class="js-tag color3">课程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">课程</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,6 +673,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="http://blog.aschool.cn/17930" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>12计软班级博客</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.cyy11.cn" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>曹依依博客</a>
             </li>
           
         </ul>

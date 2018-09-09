@@ -9,7 +9,7 @@
   <title>CS31n学习笔记&lt;二&gt;k-NN与线性分类器 | fahai的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、前言　　任务：图像分类问题，就是对于输入的图像数据，根据已有的分类标签集合，选出合适的标签对齐进行分类标记，属于监督学习的范畴。虽然该问题对人来说非常简单，但却是计算机视觉领域的核心问题，计算机视觉领域中很多看似不同的问题（比如物体检测和分割），都可以被归结为图像分类问题。　　难点：对于计算机来说，一张图像是由[Hight,Width,Channel]组成的张量(Tensor)，张量中的元素为">
-<meta name="keywords" content="笔记,cs231n,课程">
+<meta name="keywords" content="cs231n,笔记,课程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS31n学习笔记&lt;二&gt;k-NN与线性分类器">
 <meta property="og:url" content="http://yoursite.com/2018/08/20/CS31n学习笔记二----k-NN与线性分类器/index.html">
@@ -49,7 +49,8 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #CDC9A5"></div>
+<!-- <div class="overlay" style="background: #CDC9A5"></div> -->
+<div class="overlay" style="background: url('/assets/blogImg/cyy.jpg') no-repeat center bottom;background-size: cover;"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -59,7 +60,7 @@
 		  <h1 class="header-author"><a href="/">申发海</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">瞎折腾的fahai</p>
+		<p class="header-subtitle">重庆邮电大学19届研究僧一枚，找工作中......</p>
 		
 
 		<nav class="header-menu">
@@ -67,7 +68,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/photos">相册</a></li>
+				<li><a href="/photos/">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -86,7 +87,7 @@
     			
             
 		</nav>
-		<nav class="header-nav">
+		<nav class="header-nav" style="display:block;">
 			<div class="social">
 				
 					<a class="github" target="_blank" href="https://github.com/fahaihappy" title="github"><i class="icon-github"></i></a>
@@ -101,10 +102,17 @@
 		        
 			</div>
 		</nav>
-	</header>		
+		
+		
+	
+	</header>	
+	<div style="position:absolute; bottom: 60px; left:36px; width:76%;">
+		<iframe width=100% height=86 frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1306496848&auto=0&height=66"></iframe>
+	</div>	
 </div>
 
     </div>
+   
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
@@ -121,7 +129,7 @@
 			  <h1 class="header-author js-header-author">申发海</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>瞎折腾的fahai<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>重庆邮电大学19届研究僧一枚，找工作中......<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -153,7 +161,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/photos">相册</a></li>
+					<li style="width: 50%"><a href="/photos/">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -184,6 +192,27 @@
   	<time datetime="2018-08-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
 </a>
         
+		
+		
+			<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.7k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">6分</span>
+      </span>
+    </span>
+</div>
+		
 		
 		<!-- 目录内容 -->
 		
@@ -263,11 +292,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -341,11 +370,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/08/22/CS31n学习笔记三----损失函数与最优化/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/20/BAT机器学习面试题库（100-200）/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CS31n学习笔记&lt;三&gt;损失函数与最优化
+          BAT机器学习面试题库(101-200)
         
       </div>
     </a>
@@ -439,6 +468,11 @@
       	</div>
     </div>
   </div>
+  
+<span id="busuanzi_container_site_uv">  访问用户<span id="busuanzi_value_site_uv"></span>人次</span>
+
+<span id="busuanzi_container_site_pv"> 总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
 </footer>
     </div>
     <script>
@@ -484,6 +518,8 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+
+<script  async  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -544,7 +580,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,11 +588,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
+                <a href="javascript:void(0)" class="js-tag color3">课程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">课程</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,6 +649,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="http://blog.aschool.cn/17930" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>12计软班级博客</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.cyy11.cn" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>曹依依博客</a>
             </li>
           
         </ul>

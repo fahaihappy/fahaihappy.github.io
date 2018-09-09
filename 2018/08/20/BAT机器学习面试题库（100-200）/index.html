@@ -6,16 +6,40 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>开始我的第一篇hexo博客 | fahai的博客</title>
+  <title>BAT机器学习面试题库(101-200) | fahai的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="开始我的第一篇hexo博客">
-<meta property="og:url" content="http://yoursite.com/2018/05/23/开始我的第一篇hexo博客/index.html">
+  <meta name="description" content="为了求职笔试面试，需恶补基础、算法原理，于是仔细研读了七月在线发布的BAT机器学习面试1000题系列，也添加了一些自己的理解或来自其他博客的答案，以下内容均来自BAT机器学习面试1000题系列。该文为本人的阅读笔记，主要是为了记忆和自查。">
+<meta name="keywords" content="笔记,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BAT机器学习面试题库(101-200)">
+<meta property="og:url" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/index.html">
 <meta property="og:site_name" content="fahai的博客">
+<meta property="og:description" content="为了求职笔试面试，需恶补基础、算法原理，于是仔细研读了七月在线发布的BAT机器学习面试1000题系列，也添加了一些自己的理解或来自其他博客的答案，以下内容均来自BAT机器学习面试1000题系列。该文为本人的阅读笔记，主要是为了记忆和自查。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-23T03:50:31.456Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/20170928172200609.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/20171011002530537.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/20171012140654554.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/sigmoid.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/tanh.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/relu.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/activate.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/Elu.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/20171210124927995.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/activate.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/TP.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/20171015162028224.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/sigmoid&derivate.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/v2-82873a89ff3c14c1d3b42d1862917f35_hd.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/v2-b9e0d6871fbcae05d602bab65620a3ca_hd.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/derivate.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/20171210124702092.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/loss.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/bp.png">
+<meta property="og:updated_time" content="2018-09-08T06:21:42.169Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开始我的第一篇hexo博客">
+<meta name="twitter:title" content="BAT机器学习面试题库(101-200)">
+<meta name="twitter:description" content="为了求职笔试面试，需恶补基础、算法原理，于是仔细研读了七月在线发布的BAT机器学习面试1000题系列，也添加了一些自己的理解或来自其他博客的答案，以下内容均来自BAT机器学习面试1000题系列。该文为本人的阅读笔记，主要是为了记忆和自查。">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/20170928172200609.jpg">
   
     <link rel="alternative" href="/atom.xml" title="fahai的博客" type="application/atom+xml">
   
@@ -40,7 +64,8 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #CDC9A5"></div>
+<!-- <div class="overlay" style="background: #CDC9A5"></div> -->
+<div class="overlay" style="background: url('/assets/blogImg/cyy.jpg') no-repeat center bottom;background-size: cover;"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -50,7 +75,7 @@
 		  <h1 class="header-author"><a href="/">申发海</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">瞎折腾的fahai</p>
+		<p class="header-subtitle">重庆邮电大学19届研究僧一枚，找工作中......</p>
 		
 
 		<nav class="header-menu">
@@ -58,7 +83,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/photos">相册</a></li>
+				<li><a href="/photos/">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -77,7 +102,7 @@
     			
             
 		</nav>
-		<nav class="header-nav">
+		<nav class="header-nav" style="display:block;">
 			<div class="social">
 				
 					<a class="github" target="_blank" href="https://github.com/fahaihappy" title="github"><i class="icon-github"></i></a>
@@ -92,10 +117,17 @@
 		        
 			</div>
 		</nav>
-	</header>		
+		
+		
+	
+	</header>	
+	<div style="position:absolute; bottom: 60px; left:36px; width:76%;">
+		<iframe width=100% height=86 frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1306496848&auto=0&height=66"></iframe>
+	</div>	
 </div>
 
     </div>
+   
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
@@ -112,7 +144,7 @@
 			  <h1 class="header-author js-header-author">申发海</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>瞎折腾的fahai<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>重庆邮电大学19届研究僧一枚，找工作中......<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -144,7 +176,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/photos">相册</a></li>
+					<li style="width: 50%"><a href="/photos/">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -159,24 +191,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-开始我的第一篇hexo博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-BAT机器学习面试题库（100-200）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      开始我的第一篇hexo博客
+      BAT机器学习面试题库(101-200)
     </h1>
   
 
         
-        <a href="/2018/05/23/开始我的第一篇hexo博客/" class="archive-article-date">
-  	<time datetime="2018-05-23T03:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
+        <a href="/2018/08/20/BAT机器学习面试题库（100-200）/" class="archive-article-date">
+  	<time datetime="2018-08-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
 </a>
         
 		
+		
+			<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">5k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">18分</span>
+      </span>
+    </span>
+</div>
+		
+		
 		<!-- 目录内容 -->
+		
+			<p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+			<span class="btn-bg"></span>
+			<span class="btn-text">文章导航</span>
+			</p>
+			<div id="toc-article" class="toc-article">
+				<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+				<strong class="toc-title">文章目录</strong>
+				<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#101-解释对偶的概念。机器学习-ML基础-易"><span class="toc-number">1.</span> <span class="toc-text">101. 解释对偶的概念。机器学习 ML基础 易</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#102-如何进行特征选择？机器学习-ML基础-中"><span class="toc-number">2.</span> <span class="toc-text">102. 如何进行特征选择？机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#103-数据预处理。机器学习-ML基础-易"><span class="toc-number">3.</span> <span class="toc-text">103. 数据预处理。机器学习 ML基础 易</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#104-简单说说特征工程。机器学习-ML基础-中"><span class="toc-number">4.</span> <span class="toc-text">104. 简单说说特征工程。机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#105-你知道有哪些数据处理和特征工程的处理？机器学习-ML应用-中"><span class="toc-number">5.</span> <span class="toc-text">105. 你知道有哪些数据处理和特征工程的处理？机器学习 ML应用 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#106-请对比下Sigmoid、Tanh、ReLu这三个激活函数。深度学习-DL基础-中"><span class="toc-number">6.</span> <span class="toc-text">106. 请对比下Sigmoid、Tanh、ReLu这三个激活函数。深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#107-Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。深度学习-DL基础-中"><span class="toc-number">7.</span> <span class="toc-text">107. Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#108-怎么理解决策树、xgboost能处理缺失值？而有的模型-svm-对缺失值比较敏感。机器学习-ML模型-中"><span class="toc-number">8.</span> <span class="toc-text">108. 怎么理解决策树、xgboost能处理缺失值？而有的模型(svm)对缺失值比较敏感。机器学习 ML模型 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#109-为什么引入非线性激励函数？深度学习-DL基础-中"><span class="toc-number">9.</span> <span class="toc-text">109. 为什么引入非线性激励函数？深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#110-请问人工神经网络中为什么ReLu要好过于tanh和sigmoid-function？深度学习-DL基础-中"><span class="toc-number">10.</span> <span class="toc-text">110. 请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#111-为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数？深度学习-DL模型-难"><span class="toc-number">11.</span> <span class="toc-text">111. 为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数？深度学习 DL模型 难</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#112-衡量分类器的好坏？机器学习-ML基础-中"><span class="toc-number">12.</span> <span class="toc-text">112. 衡量分类器的好坏？机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#113-机器学习和统计里面的auc的物理意义是啥？机器学习-ML基础-中"><span class="toc-number">13.</span> <span class="toc-text">113. 机器学习和统计里面的auc的物理意义是啥？机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#114-观察增益gain-alpha和gamma越大，增益越小？机器学习-ML基础-中"><span class="toc-number">14.</span> <span class="toc-text">114. 观察增益gain, alpha和gamma越大，增益越小？机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#115-什麽造成梯度消失问题-推导一下。深度学习-DL基础-中"><span class="toc-number">15.</span> <span class="toc-text">115. 什麽造成梯度消失问题? 推导一下。深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#116-什么是梯度消失和梯度爆炸？深度学习-DL基础-中"><span class="toc-number">16.</span> <span class="toc-text">116. 什么是梯度消失和梯度爆炸？深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#117-如何解决梯度消失和梯度膨胀？深度学习-DL基础-中"><span class="toc-number">17.</span> <span class="toc-text">117. 如何解决梯度消失和梯度膨胀？深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#118-推导下反向传播Backpropagation。深度学习-DL基础-难"><span class="toc-number">18.</span> <span class="toc-text">118. 推导下反向传播Backpropagation。深度学习 DL基础 难</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#119-SVD和PCA。机器学习-ML模型-中"><span class="toc-number">19.</span> <span class="toc-text">119. SVD和PCA。机器学习 ML模型 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#120-数据不平衡问题。机器学习-ML基础-易"><span class="toc-number">20.</span> <span class="toc-text">120. 数据不平衡问题。机器学习 ML基础 易</span></a></li></ol>
+		   </div>
+		   <script type="text/javascript">
+			function showToc(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:block");
+				show_toc_btn.setAttribute("style","display:none");
+				};
+			function showBtn(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:none");
+				show_toc_btn.setAttribute("style","display:block");
+				};
+		   </script>
 		     
 		<!-- 目录内容结束 -->
 	
@@ -184,7 +261,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>　　为了求职笔试面试，需恶补基础、算法原理，于是仔细研读了七月在线发布的BAT机器学习面试1000题系列，也添加了一些自己的理解或来自其他博客的答案，以下内容均来自<a href="https://blog.csdn.net/v_JULY_v/article/details/78121924" target="_blank" rel="noopener">BAT机器学习面试1000题系列</a>。该文为本人的阅读笔记，主要是为了记忆和自查。<br>　　<a id="more"></a></p>
+<h5 id="101-解释对偶的概念。机器学习-ML基础-易"><a href="#101-解释对偶的概念。机器学习-ML基础-易" class="headerlink" title="101. 解释对偶的概念。机器学习 ML基础 易"></a>101. 解释对偶的概念。机器学习 ML基础 易</h5><p>　　一个优化问题可以从两个角度进行考察，一个是primal(原始)问题，一个是dual(对偶)问题，就是<strong>对偶问题</strong>，一般情况下对偶问题给出主问题最优值的下界，在强对偶性成立的情况下由对偶问题可以得到主问题的最优下界，对偶问题是<strong>凸优化问题</strong>，可以进行较好的求解，SVM中就是将primal问题转换为dual问题进行求解，从而进一步引入核函数的思想。</p>
+<h5 id="102-如何进行特征选择？机器学习-ML基础-中"><a href="#102-如何进行特征选择？机器学习-ML基础-中" class="headerlink" title="102. 如何进行特征选择？机器学习 ML基础 中"></a>102. 如何进行特征选择？机器学习 ML基础 中</h5><p>　　特征选择是一个重要的数据预处理过程，主要有两个原因：一是减少特征数量、降维，使模型泛化能力更强，减少过拟合;二是增强对特征和特征值之间的理解。<br>　　常见的<strong>特征选择方式</strong>：<br>　　1. 去除方差较小的特征<br>　　2. 正则化。Ｌ1正则化能够生成稀疏的模型。L2正则化的表现更加稳定，由于有用的特征往往对应系数非零。<br>　　3. 随机森林，对于分类问题，通常采用<strong>基尼不纯度</strong>或者<strong>信息增益</strong>，对于回归问题，通常采用的是<strong>方差</strong>或者<strong>最小二乘</strong>拟合。一般不需要feature engineering、调参等繁琐的步骤。它的两个主要问题，1是重要的特征有可能得分很低（关联特征问题），2是这种方法对特征变量类别多的特征越有利（偏向问题）。<br>　　4. 稳定性选择。是一种基于二次抽样和选择算法相结合较新的方法，选择算法可以是回归、SVM或其他类似的方法。它的主要思想是在不同的数据子集和特征子集上运行特征选择算法，不断的重复，最终汇总特征选择结果，比如可以统计某个特征被认为是重要特征的频率（被选为重要特征的次数除以它所在的子集被测试的次数）。理想情况下，重要特征的得分会接近100%。稍微弱一点的特征得分会是非0的数，而最无用的特征得分将会接近于0。</p>
+<h5 id="103-数据预处理。机器学习-ML基础-易"><a href="#103-数据预处理。机器学习-ML基础-易" class="headerlink" title="103. 数据预处理。机器学习 ML基础 易"></a>103. 数据预处理。机器学习 ML基础 易</h5><p>　　1. 缺失值，填充缺失值fillna：<br>　　　i. 离散：None,<br>　　　ii. 连续：均值。<br>　　　iii. 缺失值太多，则直接去除该列。<br>　　2. 连续值：离散化。有的模型（如决策树）需要离散值<br>　　3. 对定量特征二值化。核心在于设定一个阈值，大于阈值的赋值为1，小于等于阈值的赋值为0。<br>　　4. 皮尔逊相关系数，去除高度相关的列</p>
+<h5 id="104-简单说说特征工程。机器学习-ML基础-中"><a href="#104-简单说说特征工程。机器学习-ML基础-中" class="headerlink" title="104. 简单说说特征工程。机器学习 ML基础 中"></a>104. 简单说说特征工程。机器学习 ML基础 中</h5><p><img src="20170928172200609.jpg" alt="20170928172200609.jpg"></p>
+<h5 id="105-你知道有哪些数据处理和特征工程的处理？机器学习-ML应用-中"><a href="#105-你知道有哪些数据处理和特征工程的处理？机器学习-ML应用-中" class="headerlink" title="105. 你知道有哪些数据处理和特征工程的处理？机器学习 ML应用 中"></a>105. 你知道有哪些数据处理和特征工程的处理？机器学习 ML应用 中</h5><p><img src="20171011002530537.jpg" alt="20171011002530537.jpg"></p>
+<h5 id="106-请对比下Sigmoid、Tanh、ReLu这三个激活函数。深度学习-DL基础-中"><a href="#106-请对比下Sigmoid、Tanh、ReLu这三个激活函数。深度学习-DL基础-中" class="headerlink" title="106. 请对比下Sigmoid、Tanh、ReLu这三个激活函数。深度学习 DL基础 中"></a>106. 请对比下Sigmoid、Tanh、ReLu这三个激活函数。深度学习 DL基础 中</h5><p>　　<strong>sigmoid函数</strong>又称logistic函数，应用在Logistic回归中。logistic回归的目的是从特征学习出一个0/1分类模型，而这个模型是将特性的线性组合作为自变量，由于自变量的取值范围是负无穷到正无穷。因此，使用logistic函数将自变量映射到(0,1)上，映射后的值被认为是属于y=1的概率。<br><img src="20171012140654554.jpg" alt="20171012140654554.jpg"><br>　　假设函数：$h_\theta (x) = g(\theta^Tx) = \frac{1}{1+e^{-\theta^Tx}}$<br>　　其中x是n维特征向量，函数g就是logistic函数。而$g(z) = \frac{1}{e^{-z}}$函数图像：<br><img src="sigmoid.png" alt="sigmoid.png"><br>　　可以看到，将无穷映射到了(0,1)。<br>　　而假设函数就是特征属于y=1的概率。<br>　　<script type="math/tex">P(y=1\| x; \theta) = h_\theta(x) \\
+   P(y= 0|x;\theta) = 1 - h_\theta(x)</script><br>　　从而，当我们要判别一个新来的特征属于哪个类时，只需求$h_\theta(x)$即可，若$h_\theta(x)$大于0.5就是y=1的类，反之属于y=0类。<br>　　tanh激活函数：<br><img src="tanh.jpg" alt="tanh.jpg"><br>　　relu激活函数：<br><img src="relu.jpg" alt="relu.jpg"><br>　　但sigmoid函数有如下几个<strong>缺点</strong>：<br>　　a). 正向计算包含指数，反向传播的导数也包含指数计算和除法运算，因而计算复杂度很高。<br>　　b). 输出的均值非0。这样使得网络容易发生<strong>梯度消失</strong>或<strong>梯度爆炸</strong>。这也是batch normalization要解决的问题。<br>　　c). 假如sigmoid函数为f(x)，那么f’(x)=f(x)(1-f(x))，因为f(x)输出在0-1之间，那么f’(x)恒大于0。 这就导致全部的梯度的正负号都取决于损失函数上的梯度。这样容易导致训练不稳定，参数一荣俱荣一损俱损。<br>　　d). 同样的，f’(x)=f(x)(1-f(x))，因为f(x)输出在0-1之间，那么f’(x)输出也在0-1之间，当层次比较深时，底层的导数就是很多在0-1之间的数相乘，从而导致了梯度消失问题。<br>　　对于tanh来说，同sigmoid类似，但是输出值在-1到1之间，均值为0，是其相对于sigmoid的提升。但是因为输出在-1，1之间，因而输出不能被看做是概率。<br><img src="activate.jpg" alt="activate.jpg"><br>　　更多参考<a href="https://mp.weixin.qq.com/s/7DgiXCNBS5vb07WIKTFYRQ" target="_blank" rel="noopener">资源 | 从ReLU到Sinc，26种神经网络激活函数可视化</a><br>　　对于ReLU来说，相对于sigmoid和tanh来说，有如下<strong>优点</strong>：<br>　　a). 计算量下，没有指数和除法运算。<br>　　b). 不会饱和，因为在x&gt;0的情况下，导数恒等于1<br>　　d). 收敛速度快，在实践中可以得知，它的收敛速度是sigmoid的6倍。<br>　　e). Relu会使一部分神经元的输出为0，这样就造成了网络的稀疏性，并且减少了参数的相互依存关系，缓解了过拟合问题的发生<br>　　但是Relu也有缺点，<strong>缺点在于</strong>，<br>　　如果有一个特别大的导数经过神经单元使得输入变得小于0，这样会使得这个单元永远得不到参数更新，因为输入小于0时导数也是0. 这就形成了很多dead cell(<em>失活</em>)。</p>
+<h5 id="107-Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。深度学习-DL基础-中"><a href="#107-Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。深度学习-DL基础-中" class="headerlink" title="107. Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。深度学习 DL基础 中"></a>107. Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。深度学习 DL基础 中</h5><p>　　sigmoid、Tanh、ReLU的缺点在见上题，@张雨石：为了解决ReLU的dead cell的情况，发明了Leaky Relu， 即在输入小于0时不让输出为0，而是乘以一个较小的系数，从而保证有导数存在。<em>其他改进如：PRelu、RRelu、RReLU</em>同样的目的，还有一个ELU，函数示意图如下。<br><img src="Elu.jpg" alt="Elu.jpg"><br>　　还有一个激活函数是Maxout，即使用两套w,b参数，输出较大值。本质上Maxout可以看做Relu的泛化版本，因为如果一套w,b全都是0的话，那么就是普通的ReLU。Maxout可以克服Relu的缺点，但是参数数目翻倍。<br>　　<a href="https://blog.csdn.net/woaidapaopao/article/details/77806273" target="_blank" rel="noopener">面试笔试整理3：深度学习机器学习面试问题准备（必会）</a></p>
+<h5 id="108-怎么理解决策树、xgboost能处理缺失值？而有的模型-svm-对缺失值比较敏感。机器学习-ML模型-中"><a href="#108-怎么理解决策树、xgboost能处理缺失值？而有的模型-svm-对缺失值比较敏感。机器学习-ML模型-中" class="headerlink" title="108. 怎么理解决策树、xgboost能处理缺失值？而有的模型(svm)对缺失值比较敏感。机器学习 ML模型 中"></a>108. 怎么理解决策树、xgboost能处理缺失值？而有的模型(svm)对缺失值比较敏感。机器学习 ML模型 中</h5><p><a href="https://www.zhihu.com/question/58230411" target="_blank" rel="noopener">怎么理解决策树、xgboost能处理缺失值？而有的模型(svm)对缺失值比较敏感?</a></p>
+<h5 id="109-为什么引入非线性激励函数？深度学习-DL基础-中"><a href="#109-为什么引入非线性激励函数？深度学习-DL基础-中" class="headerlink" title="109. 为什么引入非线性激励函数？深度学习 DL基础 中"></a>109. 为什么引入非线性激励函数？深度学习 DL基础 中</h5><p>　　@张雨石：第一，对于神经网络来说，网络的每一层相当于f(wx+b)=f(w’x)，对于线性函数，其实相当于f(x)=x，那么在线性激活函数下，每一层相当于用一个矩阵去乘以x，那么多层就是反复的用矩阵去乘以输入。根据矩阵的乘法法则，多个矩阵相乘得到一个大矩阵。<strong>所以线性激励函数下，多层网络与一层网络相当</strong>。比如，两层的网络f(W1<em>f(W2x))=W1W2x=Wx。<br>　　第二，非线性变换是深度学习有效的原因之一。原因在于非线性相当于对空间进行变换，变换完成后相当于对<em>*问题空间进行简化</em></em>，原来线性不可解的问题现在变得可以解了。<br>　　下图可以很形象的解释这个问题，左图用一根线是无法划分的。经过一系列变换后，就变成线性可解的问题了。<br><img src="20171210124927995.jpg" alt="20171210124927995.jpg"><br>　　<a href="https://www.zhihu.com/question/29021768" target="_blank" rel="noopener">请问人工神经网络中的activation function的作用具体是什么？为什么ReLu要好过于tanh和sigmoid function?</a></p>
+<h5 id="110-请问人工神经网络中为什么ReLu要好过于tanh和sigmoid-function？深度学习-DL基础-中"><a href="#110-请问人工神经网络中为什么ReLu要好过于tanh和sigmoid-function？深度学习-DL基础-中" class="headerlink" title="110. 请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？深度学习 DL基础 中"></a>110. 请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？深度学习 DL基础 中</h5><p><img src="activate.jpg" alt="activate.jpg"><br>　　见以上问题</p>
+<h5 id="111-为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数？深度学习-DL模型-难"><a href="#111-为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数？深度学习-DL模型-难" class="headerlink" title="111. 为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数？深度学习 DL模型 难"></a>111. 为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数？深度学习 DL模型 难</h5><p>　　为什么不是选择统一一种sigmoid或者tanh，而是混合使用呢？这样的目的是什么？<a href="https://www.zhihu.com/question/46197687" target="_blank" rel="noopener">为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数？</a><br>　　二者目的不一样<br>　　a). sigmoid 用在了各种gate上，产生0~1之间的值，这个一般只有sigmoid最直接了。<br>　　b). tanh 用在了状态和输出上，是对数据的处理，这个用其他激活函数或许也可以。</p>
+<h5 id="112-衡量分类器的好坏？机器学习-ML基础-中"><a href="#112-衡量分类器的好坏？机器学习-ML基础-中" class="headerlink" title="112. 衡量分类器的好坏？机器学习 ML基础 中"></a>112. 衡量分类器的好坏？机器学习 ML基础 中</h5><p>　　<a href="https://blog.csdn.net/woaidapaopao/article/details/77806273" target="_blank" rel="noopener">面试笔试整理3：深度学习机器学习面试问题准备（必会）</a>这里首先要知道TP、FN（真的判成假的）、FP（假的判成真）、TN四种（可以画一个表格）。<br><img src="TP.png" alt="TP.png"><br>　　<strong>几种常用的指标：</strong><br>　　准确率: precision = TP/(TP+FP) = TP/~P （~p为预测为真的数量）<br>　　召回率: recall = TP/(TP+FN) = TP/ P<br>　　F1值: 2/F1 = 1/recall + 1/precision<br>　　ROC曲线: ROC空间是一个以伪阳性率（FPR，false positive rate）为X轴，真阳性率（TPR, true positive rate）为Y轴的二维坐标系所代表的平面。其中真阳率TPR = TP / P = recall， 伪阳率FPR = FP / N<br>　　AUC: ROC曲线与坐标轴围成的面积。</p>
+<h5 id="113-机器学习和统计里面的auc的物理意义是啥？机器学习-ML基础-中"><a href="#113-机器学习和统计里面的auc的物理意义是啥？机器学习-ML基础-中" class="headerlink" title="113. 机器学习和统计里面的auc的物理意义是啥？机器学习 ML基础 中"></a>113. 机器学习和统计里面的auc的物理意义是啥？机器学习 ML基础 中</h5><p>　　<a href="https://www.zhihu.com/question/39840928" target="_blank" rel="noopener">机器学习和统计里面的auc怎么理解？</a></p>
+<h5 id="114-观察增益gain-alpha和gamma越大，增益越小？机器学习-ML基础-中"><a href="#114-观察增益gain-alpha和gamma越大，增益越小？机器学习-ML基础-中" class="headerlink" title="114. 观察增益gain, alpha和gamma越大，增益越小？机器学习 ML基础 中"></a>114. 观察增益gain, alpha和gamma越大，增益越小？机器学习 ML基础 中</h5><p>　　@AntZ：xgboost寻找分割点的标准是最大化gain. 考虑传统的枚举每个特征的所有可能分割点的贪心法效率太低，xgboost实现了一种近似的算法。大致的思想是根据百分位法列举几个可能成为分割点的候选者，然后从候选者中计算Gain按最大值找出最佳的分割点。它的计算公式分为四项, 可以由正则化项参数调整(lamda为叶子权重平方和的系数, gama为叶子数量):<br><img src="20171015162028224.jpg" alt="20171015162028224.jpg"><br>　　第一项是假设分割的左孩子的权重分数, 第二项为右孩子, 第三项为不分割总体分数, 最后一项为引入一个节点的复杂度损失<br>　　由公式可知, gama越大gain越小, lamda越大, gain可能小也可能大.<br>　　原问题是alpha而不是lambda, 这里paper上没有提到, xgboost实现上有这个参数. 上面是我从paper上理解的答案,下面是搜索到的:<br>　　<a href="https://zhidao.baidu.com/question/2121727290086699747.html?fr=iks&amp;word=xgboost+lamda&amp;ie=gbk" target="_blank" rel="noopener">https://zhidao.baidu.com/question/2121727290086699747.html?fr=iks&amp;word=xgboost+lamda&amp;ie=gbk</a><br>　　lambda[默认1]权重的L2正则化项。(和Ridge regression类似)。 这个参数是用来控制XGBoost的正则化部分的。虽然大部分数据科学家很少用到这个参数，但是这个参数在减少过拟合上还是可以挖掘出更多用处的。11、alpha[默认1]权重的L1正则化项。(和Lasso regression类似)。 可以应用在很高维度的情况下，使得算法的速度更快。<br>　　gamma[默认0]在节点分裂时，只有分裂后损失函数的值下降了，才会分裂这个节点。Gamma指定了节点分裂所需的最小损失函数下降值。 这个参数的值越大，算法越保守。</p>
+<h5 id="115-什麽造成梯度消失问题-推导一下。深度学习-DL基础-中"><a href="#115-什麽造成梯度消失问题-推导一下。深度学习-DL基础-中" class="headerlink" title="115. 什麽造成梯度消失问题? 推导一下。深度学习 DL基础 中"></a>115. 什麽造成梯度消失问题? 推导一下。深度学习 DL基础 中</h5><ul>
+<li>　　<a href="https://link.zhihu.com/?target=https%3A//medium.com/%40karpathy/yes-you-should-understand-backprop-e2f06eab496b%23.urj9svxwg" target="_blank" rel="noopener">Yes you should understand backdrop－Andrej Karpathy</a></li>
+<li>　　<a href="https://link.zhihu.com/?target=https%3A//www.quora.com/How-does-the-ReLu-solve-the-vanishing-gradient-problem" target="_blank" rel="noopener">How does the ReLu solve the vanishing gradient problem?</a></li>
+<li>　　神经网络的训练中，通过改变神经元的权重，使网络的输出值尽可能逼近标签以降低误差值，训练普遍使用BP算法，核心思想是，计算出输出与标签间的损失函数值，然后计算其相对于每个神经元的梯度，进行权值的迭代。</li>
+<li>　　梯度消失会造成权值更新缓慢，模型训练难度增加。造成梯度消失的一个原因是，许多激活函数将输出值挤压在很小的区间内，在激活函数两端较大范围的定义域内梯度为0，造成学习停止。<br>　　<img src="sigmoid&amp;derivate.jpg" alt="sigmoid&amp;derivate.jpg"><h5 id="116-什么是梯度消失和梯度爆炸？深度学习-DL基础-中"><a href="#116-什么是梯度消失和梯度爆炸？深度学习-DL基础-中" class="headerlink" title="116. 什么是梯度消失和梯度爆炸？深度学习 DL基础 中"></a>116. 什么是梯度消失和梯度爆炸？深度学习 DL基础 中</h5>　　@寒小阳，反向传播中链式法则带来的连乘，如果有数很小趋于0，结果就会特别小（梯度消失）；如果数都比较大，可能结果会很大（梯度爆炸）。<br>　　@单车，下段来源：<a href="https://zhuanlan.zhihu.com/p/25631496" target="_blank" rel="noopener">神经网络训练中的梯度消失与梯度爆炸</a><br>　　层数比较多的神经网络模型在训练时也是会出现一些问题的，其中就包括梯度消失问题（gradient vanishing problem）和梯度爆炸问题（gradient exploding problem）。梯度消失问题和梯度爆炸问题一般随着网络层数的增加会变得越来越明显。<br>　　例如，对于下图所示的含有3个隐藏层的神经网络，梯度消失问题发生时，接近于输出层的hidden layer 3等的权值更新相对正常，但前面的hidden layer 1的权值更新会变得很慢，导致前面的层权值几乎不变，仍接近于初始化的权值，这就导致hidden layer 1相当于只是一个映射层，对所有的输入做了一个同一映射，这是此深层网络的学习就等价于只有后几层的浅层网络的学习了。<br><img src="v2-82873a89ff3c14c1d3b42d1862917f35_hd.jpg" alt="v2-82873a89ff3c14c1d3b42d1862917f35_hd.jpg"><br>　　而这种问题为何会产生呢？以下图的反向传播为例（假设每一层只有一个神经元且对于每一层$y_i=\sigma\left(z_i\right)=\sigma\left(w_ix_i+b_i\right)$，其中$\sigma$为sigmoid函数）<br><img src="v2-b9e0d6871fbcae05d602bab65620a3ca_hd.jpg" alt="v2-b9e0d6871fbcae05d602bab65620a3ca_hd.jpg"><br>　　可以推导出<script type="math/tex; mode=display">
+\begin{align}
+&\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial y_4}\frac{\partial y_4}{\partial z_4}\frac{\partial z_4}{\partial x_4}\frac{\partial x_4}{\partial z_3}\frac{\partial z_3}{\partial x_3}\frac{\partial x_3}{\partial z_2}\frac{\partial z_2}{\partial x_2}\frac{\partial x_2}{\partial z_1}\frac{\partial z_1}{\partial b_1}\\
+&=\frac{\partial C}{\partial y_4}\sigma'\left(z_4\right)w_4\sigma'\left(z_3\right)w_3\sigma'\left(z_2\right)w_2\sigma'\left(z_1\right)
+\end{align}</script>　　而sigmoid的导数$\sigma’\left(x\right)$如下图：<br><img src="derivate.jpg" alt="derivate.jpg"><br>　　可见，$\sigma’\left(x\right)$的最大值为$\frac{1}{4}$，而我们初始化的网络权值|w|通常都小于1，因此$|\sigma’\left(z\right)w|\leq\frac{1}{4}$，因此对于上面的链式求导，层数越多，求导结果$\frac{\partial C}{\partial b_1}$越小，因而导致　梯度消失的情况出现。<br>　　这样，梯度爆炸问题的出现原因就显而易见了，即$|\sigma’\left(z\right)w|&gt;1$，也就是w比较大的情况。但对于使用sigmoid激活函数来说，这种情况比较少。因为$\sigma’\left(z\right)$的大小也与w有关$（z=wx+b）$，除非该层的输入值x在一直一个比较小的范围内。<br>　　其实梯度爆炸和梯度消失问题都是因为网络太深，网络权值更新不稳定造成的，本质上是因为<strong>梯度反向传播中的连乘效应</strong>。对于更普遍的梯度消失问题，可以考虑用ReLU激活函数取代sigmoid激活函数。另外，LSTM的结构设计也可以改善RNN中的梯度消失问题。<h5 id="117-如何解决梯度消失和梯度膨胀？深度学习-DL基础-中"><a href="#117-如何解决梯度消失和梯度膨胀？深度学习-DL基础-中" class="headerlink" title="117. 如何解决梯度消失和梯度膨胀？深度学习 DL基础 中"></a>117. 如何解决梯度消失和梯度膨胀？深度学习 DL基础 中</h5>　　<strong>（1）梯度消失：</strong><br>　　根据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的话，那么即使这个结果是0.99，在经过足够多层传播之后，误差对输入层的偏导会趋于0<br>　　可以<strong>采用ReLU激活函数</strong>有效的解决梯度消失的情况，也可以<strong>用Batch Normalization</strong>解决这个问题。关于深度学习中 Batch Normalization为什么效果好？参见：<a href="https://www.zhihu.com/question/38102762" target="_blank" rel="noopener">深度学习中 Batch Normalization为什么效果好？</a><br>　　<strong>（2）梯度膨胀</strong><br>　　根据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都大于1的话，在经过足够多层传播之后，误差对输入层的偏导会趋于无穷大<br>　　可以<strong>通过激活函数</strong>来解决，或用<strong>Batch Normalization</strong>解决这个问题。</li>
+</ul>
+<h5 id="118-推导下反向传播Backpropagation。深度学习-DL基础-难"><a href="#118-推导下反向传播Backpropagation。深度学习-DL基础-难" class="headerlink" title="118. 推导下反向传播Backpropagation。深度学习 DL基础 难"></a>118. 推导下反向传播Backpropagation。深度学习 DL基础 难</h5><p>　　@我愛大泡泡，来源：<a href="http://blog.csdn.net/woaidapaopao/article/details/77806273" target="_blank" rel="noopener">面试笔试整理3：深度学习机器学习面试问题准备（必会）</a><br>　　首先，要理解反向传播的基本原理，那就是求导的链式法则。</p>
+<script type="math/tex; mode=display">\frac{d_y}{d_x} = \frac{d_y}{d_u} \cdot \frac{d_u}{d_x}\\
+\frac{d_y}{d_z} = \frac{d_y}{d_u} \cdot \frac{d_u}{d_x} \cdot \frac{d_x}{d_z}</script><p>　　反映到神经网络里：<br>　　<img src="20171210124702092.jpg" alt="20171210124702092.jpg"><br>　　下面从损失函数开始用公式进行推导。<br>　　反向传播是在求解<strong>损失函数L对参数w求导</strong>时候用到的方法，目的是通过<strong>链式法则</strong>对参数进行一层一层的求导。这里重点强调：要将参数进行随机初始化而不是全部置0，否则所有隐层的数值都会与输入相关，这称为<strong>对称失效</strong>。<br>　　大致过程是:<br>　　a). 首先前向传导计算出所有节点的激活值和输出值，<br>　　$z^{(l +1)} = W^{(l)}a^{(l)} + b^{(l)}$<br>　　$ａ^{(l +1)} = f(z^{(l +1)})$<br>　　b). 计算整体损失函数：<br>　　<img src="loss.png" alt="loss.png"><br>　　c). 然后针对第L层的每个节点计算出残差（这里是因为UFLDL中说的是残差，本质就是整体损失函数对每一层激活值Z的导数），所以要对W求导只要再乘上激活函数对W的导数即可<br>　　<img src="bp.png" alt="bp.png"></p>
+<h5 id="119-SVD和PCA。机器学习-ML模型-中"><a href="#119-SVD和PCA。机器学习-ML模型-中" class="headerlink" title="119. SVD和PCA。机器学习 ML模型 中"></a>119. SVD和PCA。机器学习 ML模型 中</h5><p>　　PCA的理念是使得数据投影后的<strong>方差最大</strong>，找到这样一个投影向量，满足方差最大的条件即可。而经过了去除均值的操作之后，就可以用SVD分解来求解这样一个投影向量，选择特征值最大的方向。<br>　　PCA的本质是对于一个以矩阵为参数的分布进行似然估计，而SVD是矩阵近似的有效手段。<br>　　详见：<a href="https://www.zhihu.com/question/40043805" target="_blank" rel="noopener">PCA数据降维和SVD降维有什么区别？</a></p>
+<h5 id="120-数据不平衡问题。机器学习-ML基础-易"><a href="#120-数据不平衡问题。机器学习-ML基础-易" class="headerlink" title="120. 数据不平衡问题。机器学习 ML基础 易"></a>120. 数据不平衡问题。机器学习 ML基础 易</h5><p>　　这主要是由于<strong>数据分布不平衡</strong>造成的。解决方法如下：<br>　　1. 采样，对小样本加噪声采样，对大样本进行下采样<br>　　2. 数据生成，利用已知样本生成新的样本<br>　　3. 进行特殊的加权，如在Adaboost中或者SVM中<br>　　4. 采用对不平衡数据集不敏感的算法<br>　　5. 改变评价标准：用AUC/ROC来进行评价<br>　　6. 采用Bagging/Boosting/ensemble等方法<br>　　7. 在设计模型的时候考虑数据的先验分布</p>
+
       
 
       
@@ -218,6 +326,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -268,7 +391,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/23/开始我的第一篇hexo博客/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/20/BAT机器学习面试题库（100-200）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,18 +405,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/20/2018搜狐内容识别算法大赛总结/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/22/CS31n学习笔记三----损失函数与最优化/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          2018搜狐内容识别算法大赛总结
+          CS31n学习笔记&lt;三&gt;损失函数与最优化
         
       </div>
     </a>
   
   
-    <a href="/2018/05/23/test/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">test</div>
+    <a href="/2018/08/20/CS31n学习笔记二----k-NN与线性分类器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CS31n学习笔记&lt;二&gt;k-NN与线性分类器</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -312,6 +435,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#101-解释对偶的概念。机器学习-ML基础-易"><span class="toc-number">1.</span> <span class="toc-text">101. 解释对偶的概念。机器学习 ML基础 易</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#102-如何进行特征选择？机器学习-ML基础-中"><span class="toc-number">2.</span> <span class="toc-text">102. 如何进行特征选择？机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#103-数据预处理。机器学习-ML基础-易"><span class="toc-number">3.</span> <span class="toc-text">103. 数据预处理。机器学习 ML基础 易</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#104-简单说说特征工程。机器学习-ML基础-中"><span class="toc-number">4.</span> <span class="toc-text">104. 简单说说特征工程。机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#105-你知道有哪些数据处理和特征工程的处理？机器学习-ML应用-中"><span class="toc-number">5.</span> <span class="toc-text">105. 你知道有哪些数据处理和特征工程的处理？机器学习 ML应用 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#106-请对比下Sigmoid、Tanh、ReLu这三个激活函数。深度学习-DL基础-中"><span class="toc-number">6.</span> <span class="toc-text">106. 请对比下Sigmoid、Tanh、ReLu这三个激活函数。深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#107-Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。深度学习-DL基础-中"><span class="toc-number">7.</span> <span class="toc-text">107. Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#108-怎么理解决策树、xgboost能处理缺失值？而有的模型-svm-对缺失值比较敏感。机器学习-ML模型-中"><span class="toc-number">8.</span> <span class="toc-text">108. 怎么理解决策树、xgboost能处理缺失值？而有的模型(svm)对缺失值比较敏感。机器学习 ML模型 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#109-为什么引入非线性激励函数？深度学习-DL基础-中"><span class="toc-number">9.</span> <span class="toc-text">109. 为什么引入非线性激励函数？深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#110-请问人工神经网络中为什么ReLu要好过于tanh和sigmoid-function？深度学习-DL基础-中"><span class="toc-number">10.</span> <span class="toc-text">110. 请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#111-为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数？深度学习-DL模型-难"><span class="toc-number">11.</span> <span class="toc-text">111. 为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数？深度学习 DL模型 难</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#112-衡量分类器的好坏？机器学习-ML基础-中"><span class="toc-number">12.</span> <span class="toc-text">112. 衡量分类器的好坏？机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#113-机器学习和统计里面的auc的物理意义是啥？机器学习-ML基础-中"><span class="toc-number">13.</span> <span class="toc-text">113. 机器学习和统计里面的auc的物理意义是啥？机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#114-观察增益gain-alpha和gamma越大，增益越小？机器学习-ML基础-中"><span class="toc-number">14.</span> <span class="toc-text">114. 观察增益gain, alpha和gamma越大，增益越小？机器学习 ML基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#115-什麽造成梯度消失问题-推导一下。深度学习-DL基础-中"><span class="toc-number">15.</span> <span class="toc-text">115. 什麽造成梯度消失问题? 推导一下。深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#116-什么是梯度消失和梯度爆炸？深度学习-DL基础-中"><span class="toc-number">16.</span> <span class="toc-text">116. 什么是梯度消失和梯度爆炸？深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#117-如何解决梯度消失和梯度膨胀？深度学习-DL基础-中"><span class="toc-number">17.</span> <span class="toc-text">117. 如何解决梯度消失和梯度膨胀？深度学习 DL基础 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#118-推导下反向传播Backpropagation。深度学习-DL基础-难"><span class="toc-number">18.</span> <span class="toc-text">118. 推导下反向传播Backpropagation。深度学习 DL基础 难</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#119-SVD和PCA。机器学习-ML模型-中"><span class="toc-number">19.</span> <span class="toc-text">119. SVD和PCA。机器学习 ML模型 中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#120-数据不平衡问题。机器学习-ML基础-易"><span class="toc-number">20.</span> <span class="toc-text">120. 数据不平衡问题。机器学习 ML基础 易</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -367,6 +503,11 @@
       	</div>
     </div>
   </div>
+  
+<span id="busuanzi_container_site_uv">  访问用户<span id="busuanzi_value_site_uv"></span>人次</span>
+
+<span id="busuanzi_container_site_pv"> 总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
 </footer>
     </div>
     <script>
@@ -412,6 +553,8 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+
+<script  async  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -472,7 +615,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -480,11 +623,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
+                <a href="javascript:void(0)" class="js-tag color3">课程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">课程</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,6 +684,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="http://blog.aschool.cn/17930" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>12计软班级博客</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.cyy11.cn" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>曹依依博客</a>
             </li>
           
         </ul>
